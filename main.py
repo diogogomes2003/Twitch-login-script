@@ -14,11 +14,8 @@ for line in accounts_file:
         elem_user = driver.find_element(By.ID,"login-username")
         elem_passwd = driver.find_element(By.ID,"password-input")
         elem_user.send_keys(my_username)
-       # time.sleep(5)
         elem_passwd.send_keys(my_password)
-       # time.sleep(5)
         elem_passwd.send_keys(Keys.RETURN)
-       # time.sleep(5)
         html = driver.page_source
         soup = BeautifulSoup(html)
         logginTag = soup.find("a", {"id" : "user_display_name"})
